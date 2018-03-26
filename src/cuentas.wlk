@@ -51,3 +51,24 @@ object cuentaPapa{
 	
 	method precioCompra() = 14.70
 }
+object cuentaCasa{
+	var cuenta
+	var totalCompras = 0
+	
+	method quienPaga(nombreCuenta){
+		cuenta = nombreCuenta
+	}
+	
+	method compra(ingreseValor){
+		totalCompras += ingreseValor
+		cuenta.extraer(ingreseValor)
+	}
+	
+	method esDerrochona(){
+		return (totalCompras > 5000)
+	}
+	
+	method esBacan(){
+		return (cuenta.saldo() > 40000)
+	}
+}
